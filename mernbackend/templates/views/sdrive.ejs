@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!--favicon-->
+        <link rel="shortcut icon" href="favicon.ico" type="image/icon">
+        <link rel="icon" href="favicon.ico" type="image/icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/icon">
+    <link rel="icon" href="favicon.ico" type="image/icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Preferences</title>
+    <meta name="description" content="">
+    <meta name="author" content="templatemo">
+
+ 
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700' rel='stylesheet' type='text/css'>
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/templatemo-style.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <!-- Left column -->
+    <div class="templatemo-flex-row">
+      <div class="templatemo-sidebar">
+        <header class="templatemo-site-header">
+          <div class="square"> </div>
+        </header>
+        <%
+        if(imageList.length!=0){
+        imageList.forEach(image => {
+        %>
+  <div class="profile-photo-container">
+
+    
+    <img src="uploads/<%=image.fileToUpload %>" alt="Profile Photo" class="img-responsive" height="100" width="300">
+   
+
+  </div>
+  <%  }) %>
+    <% } else{ %>
+        <p>No image uploaded</p>
+    <% } %>
+   
+        <!-- Search box -->
+        <form class="templatemo-search-form" role="search">
+          <div class="input-group">
+            <button type="submit" class="fa fa-search"></button>
+            <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+          </div>
+        </form>
+        <div class="mobile-menu-icon">
+          <i class="fa fa-bars"></i>
+        </div>
+        <nav class="templatemo-left-nav">
+          <ul>
+            <li>
+              <a href="/slogin" class="active">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                  <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
+                </svg> &nbsp &nbsp
+                Dashboard</a>
+            </li>
+            <li>
+              <a href="/sdrive">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" fill="currentColor" class="bi bi-bar-chart-steps" viewBox="0 0 16 16">
+                  <path d="M.5 0a.5.5 0 0 1 .5.5v15a.5.5 0 0 1-1 0V.5A.5.5 0 0 1 .5 0zM2 1.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5v-1zm2 4a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-1zm2 4a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-6a.5.5 0 0 1-.5-.5v-1zm2 4a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-1z"/>
+                </svg> &nbsp &nbsp
+                Placement Drives</a>
+            </li>
+            <li>
+              <a href="/detail">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" fill="currentColor" class="bi bi-sliders" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3h9.05zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8h2.05zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1h9.05z"/>
+              </svg> &nbsp &nbsp
+              Preferences</a>
+            </li>
+            <li>
+              <a href="/logout"> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" fill="currentColor" class="bi bi-eject-fill" viewBox="0 0 16 16">
+                  <path d="M7.27 1.047a1 1 0 0 1 1.46 0l6.345 6.77c.6.638.146 1.683-.73 1.683H1.656C.78 9.5.326 8.455.926 7.816L7.27 1.047zM.5 11.5a1 1 0 0 1 1-1h13a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1h-13a1 1 0 0 1-1-1v-1z"/>
+                </svg> &nbsp &nbsp
+              Sign Out</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- Main content -->
+      <div class="templatemo-content col-1 light-gray-bg">
+        <div class="templatemo-top-nav-container">
+         
+        </div>
+        <div class="templatemo-content-container">
+          <div class="templatemo-content-widget white-bg">
+           <h1>Drive Details</h1>
+           <br>
+           <br>
+              <div class="table-data">
+            <table class="table table-striped">
+              <tr>
+                  <th>Company Name</th>
+                  <th>Position</th>
+                  <th>Domain</th>
+                  <th>Link to Apply</th>
+                  <th>Deadline</th>
+      
+              </tr>
+            <%
+            if(slist.length!=0){
+           var i=1;
+            slist.forEach(sdrive => {
+            %>
+            <tr>
+              
+              
+                <td><%=sdrive.name %></td>
+                <td><%=sdrive.position %></td>
+                <td><%=sdrive.domain %></td>
+                <td> <a href="<%=sdrive.link %>">link</a></td>
+                <td><%=sdrive.date %></td>
+                
+          
+              
+            </tr>
+            <% i++; }) %>
+            <% } else{ %>
+              <tc>
+                  <td colspan="5">No Data Found</td>
+      
+              </tc>
+          <% } %>
+         
+           </table>
+          </div>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+    <!-- JS -->
+  
+    <!-- Templatemo Script -->
+  </body>
+
+</html>
+</html>
