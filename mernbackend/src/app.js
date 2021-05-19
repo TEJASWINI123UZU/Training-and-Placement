@@ -148,7 +148,7 @@ app.post("/cregister",async(req,res)=>{
 
             //set cookie
             res.cookie("cjwt", token, {
-                expires:new Date(Date.now() + 600000),          //expires after 10 minutes
+                expires:new Date(Date.now() + 6000000),          //expires after 10 minutes
                 httpOnly:true
             });
             
@@ -273,7 +273,7 @@ app.post("/register",async(req,res)=>{
 
             //set cookie
            res.cookie("cjwt", token, {
-                expires:new Date(Date.now() + 600000),          //expires after 10 minutes
+                expires:new Date(Date.now() + 6000000),          //expires after 10 minutes
                 httpOnly:true
             });
             
@@ -636,7 +636,12 @@ app.get("/cPlacement_Drives", cauth, (req,res)=>
 app.get("/caddpdrive", cauth, (req,res)=>
 {
     console.log(`this is the cookie awesome ${req.cookies.cjwt}`);
-    res.render("caddpdrive.hbs"); 
+    CAddpdrive.find({email: cdet},function(err,caddpdrive){
+        res.render("caddpdrive.ejs",{
+           compdetList:caddpdrive
+            })
+    })
+     
 })
 
 

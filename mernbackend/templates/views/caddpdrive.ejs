@@ -37,16 +37,11 @@
          
         </header>
         <div class="profile-photo-container">
-          <img src="../images/profile-photo.jpg" alt="Profile Photo" class="img-responsive">
-          <div class="profile-photo-overlay"></div>
+          <img src="images/0.png" alt="Profile Photo" class="img-responsive">
+         
         </div>
         <!-- Search box -->
-        <form class="templatemo-search-form" role="search">
-          <div class="input-group">
-            <button type="submit" class="fa fa-search"></button>
-            <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-          </div>
-        </form>
+        
         <div class="mobile-menu-icon">
           <i class="fa fa-bars"></i>
         </div>
@@ -94,7 +89,7 @@
         <div class="templatemo-content-container">
           <div class="templatemo-content-widget white-bg">
             <h2 class="margin-bottom-10">ADD PLACEMENT DRIVE</h2>
-            <p>Update drive</p>
+          
             <form action="/caddpdrive" class="templatemo-login-form" method="POST">
               
 			  <div class="row form-group">
@@ -105,7 +100,7 @@
 				</div>
 				
                 <div class="col-lg-6 col-md-6 form-group">
-                  <label for="DOB">Date</label>
+                  <label for="DOB">Date</label>]
                   <input type="date" name="date" class="form-control" id="DOB" placeholder="DD/MM/YYYY">
               
 				</div>
@@ -125,13 +120,18 @@
                   <input type="text" name="pcv" class="form-control" id="inputFirstName" placeholder="College name">
                 </div>
 				</div>
+       <% if(compdetList.length!=0){
+  
+       compdetList.forEach(cCompanyDetails => { %>
+          
         <div class="row form-group">
                 <div class="col-lg-6 col-md-6 form-group">
                   <label for="inputFirstName">Email</label>
-                  <input type="text" name="email" class="form-control" id="inputFirstName" placeholder="College name">
+                  <input type="text" name="email" class="form-control" id="inputFirstName" value="<%=cCompanyDetails.email %>" readonly>
                 </div>
 				</div>
-	
+      <%})%>
+      <%}%>
 				<div class="row form-group">
 				<div class="col-lg-26 col-md-26 form-group">				
                   <label for="inputFirstName">Detail</label>
@@ -140,7 +140,6 @@
         </div>				  
           <br>
               <div class="form-group text-right">
-                <button type="submit" name="submit" class="templatemo-blue-button">submit</button>
                 <button type="reset" class="templatemo-white-button">Reset</button>
                      <button type="submit" name="update" class="templatemo-blue-button">update</button>
               </div>
